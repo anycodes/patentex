@@ -1,0 +1,52 @@
+\documentclass[a4paper,12pt,fontset=none]{article}
+
+% 导入必要的包
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage[top=26mm,bottom=25mm,left=25mm,right=25mm]{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+
+% 设置字体
+\setmainfont{TimesNewRomanPSStd-Regular}[
+    Path = ./font/,
+    BoldFont = TimesNewRomanPSStd-Bold.otf,
+    ItalicFont = TimesNewRomanPSStd-Italic.otf,
+    BoldItalicFont = TimesNewRomanPSStd-BoldIt.otf
+]
+
+% 设置字体大小
+\newcommand{\smallertwo}{\fontsize{15}{18}\selectfont}
+\newcommand{\smallerfour}{\fontsize{12}{14.4}\selectfont}
+\newcommand{\smallerfive}{\fontsize{9}{10.8}\selectfont}
+
+% 设置页眉页脚
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[C]{\smallerfour {说\hspace{1em}明\hspace{1em}书\hspace{1em}摘\hspace{1em}要}}
+\fancyfoot[C]{\smallerfive \thepage}
+
+% 设置标题样式
+\titleformat{\section}{\smallertwo\centering}{\thesection}{1em}{}
+
+% 设置段落样式
+\setlength{\parindent}{0pt}  % 设置段落缩进为0
+\linespread{1.67} % 20pt 行距 (20/12 = 1.67)
+
+% 移除额外的段间距
+\setlength{\parskip}{0pt}
+
+% 自动段落编号
+\newcounter{paracounter}
+\newcommand{\nl}{%
+  \stepcounter{paracounter}%
+  \par\noindent{\textbf[}\textbf{\ifnum\value{paracounter}<1000 0\fi\ifnum\value{paracounter}<100 0\fi\ifnum\value{paracounter}<10 0\fi\arabic{paracounter}}\textbf]\hspace{0.5em}}
+
+% 开始文档
+\begin{document}
+
+[此处粘贴摘要]
+
+\end{document}

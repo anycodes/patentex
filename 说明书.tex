@@ -1,0 +1,82 @@
+\documentclass[a4paper,12pt,fontset=none]{article}
+
+% 导入必要的包
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage[top=26mm,bottom=25mm,left=25mm,right=25mm]{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{paralist}
+
+% 设置字体
+\setmainfont{TimesNewRomanPSStd-Regular}[
+    Path = ./font/,
+    BoldFont = TimesNewRomanPSStd-Bold.otf,
+    ItalicFont = TimesNewRomanPSStd-Italic.otf,
+    BoldItalicFont = TimesNewRomanPSStd-BoldIt.otf
+]
+
+% 设置字体大小
+\newcommand{\smallertwo}{\fontsize{15}{18}\selectfont}
+\newcommand{\smallerfour}{\fontsize{12}{14.4}\selectfont}
+\newcommand{\smallerfive}{\fontsize{9}{10.8}\selectfont}
+
+% 设置页眉页脚
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[C]{\smallerfour {说\hspace{1em}明\hspace{1em}书}}
+\fancyfoot[C]{\smallerfive \thepage}
+
+% 设置标题样式
+\titleformat{\section}{\smallertwo\centering}{\thesection}{1em}{}
+
+% 设置段落样式
+\setlength{\parindent}{0pt}  % 设置段落缩进为0
+\linespread{1.67} % 20pt 行距 (20/12 = 1.67)
+
+% 移除额外的段间距
+\setlength{\parskip}{0pt}
+
+% 自动段落编号
+\newcounter{paracounter}
+\newcommand{\nl}{%
+  \stepcounter{paracounter}%
+  \par\noindent{\textbf[}\textbf{\ifnum\value{paracounter}<1000 0\fi\ifnum\value{paracounter}<100 0\fi\ifnum\value{paracounter}<10 0\fi\arabic{paracounter}}\textbf]\hspace{0.5em}}
+
+% 开始文档
+\begin{document}
+
+\section*{\textbf{基于 Serverless 架构的分布式压测系统及方法}}
+
+\smallerfour
+
+\noindent\textbf{技术领域}
+
+\nl 
+
+
+\noindent\textbf{背景技术}
+
+\nl 
+
+\noindent\textbf{发明内容}
+
+\nl 
+
+\noindent\textbf{附图说明}
+
+\nl 为了更清楚地说明本发明的技术方案，下面将对实施例中所需要使用的附图作简单地介绍。显而易见地，以下描述中的附图仅仅是本发明的一些实施例，对于本领域普通技术人员来讲，在不付出创造性劳动的前提下，还可以根据这些附图获得其他的附图。
+
+\nl 
+
+\noindent\textbf{具体实施方式}
+
+\nl 下面将结合本发明实施例中的附图，对本发明实施例中的技术方案进行清楚、完整地描述，显然，所描述的实施例仅仅是本发明一部分实施例，而不是全部的实施例。基于本发明中的实施例，本领域普通技术人员在没有作出创造性劳动前提下所获得的所有其他实施例，都属于本发明保护的范围。
+
+\nl 在本发明的描述中，需要说明的是，术语"中心"、"上"、"下"、"左"、"右"、"竖直"、"水平"、"内"、"外"等指示的方位或位置关系为基于附图所示的方位或位置关系，仅是为了便于描述本发明和简化描述，而不是指示或暗示所指的装置或元件必须具有特定的方位、以特定的方位构造和操作，因此不能理解为对本发明的限制。
+
+\end{document}
